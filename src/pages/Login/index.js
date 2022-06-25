@@ -1,10 +1,14 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+
 import Input from "~/components/Input";
 import Button from "~/components/Button";
 import bee from "~/assets/images/Login/bee.png";
 import styles from "./styles";
 
 const Login = () => {
+  const history = useHistory();
+
   const [userName, setUserName] = useState("");
   const [userOver18, setUserOver18] = useState(false);
 
@@ -39,7 +43,7 @@ const Login = () => {
               style={styles.enterButton}
               disabled={!userName || !userOver18}
               onClick={() => {
-                console.log("aaa");
+                history.push("home");
               }}
             >
               Enter
