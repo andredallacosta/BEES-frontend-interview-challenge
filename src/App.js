@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import Login from "~/pages/Login";
+import Home from "~/pages/Home";
 
 import "./index.css";
 
@@ -17,6 +18,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={() => <Redirect to="/login" />} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/home" component={Home} />
         </Switch>
       </Router>
     </div>
