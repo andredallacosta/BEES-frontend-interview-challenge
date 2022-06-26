@@ -9,7 +9,7 @@ import NoDataWarning from "./components/NoDataWarning";
 import BreweryCard from "./components/BreweryCard";
 import styles from "./styles";
 
-const Home = () => {
+export default function Home() {
   const history = useHistory();
   const userName = useSelector((state) => state.app.userName);
 
@@ -57,6 +57,4 @@ const Home = () => {
       )}
     </div>
   );
-};
-
-export default Home;
+}

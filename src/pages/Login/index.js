@@ -9,7 +9,7 @@ import bee from "~/assets/images/Login/bee.png";
 import Button from "./components/Button";
 import styles from "./styles";
 
-const Login = () => {
+export default function Login() {
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -59,6 +59,4 @@ const Login = () => {
       <img src={bee} alt="bee" style={styles.bee} />
     </div>
   );
-};
-
-export default Login;
+}

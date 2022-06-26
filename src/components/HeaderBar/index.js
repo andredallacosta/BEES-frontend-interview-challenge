@@ -35,11 +35,11 @@ const GoBackIcon = styled.img`
 
 const UserName = styled.h1`
   font-weight: 400;
-  font-size: 30px;
-  margin-right: 40px;
+  font-size: 25px;
+  margin: 0 40px 0 0;
 `;
 
-const HeaderBar = () => {
+export default function HeaderBar() {
   const history = useHistory();
   const userName = useSelector((state) => state.app.userName);
 
@@ -52,6 +52,4 @@ const HeaderBar = () => {
       <UserName>{userName}</UserName>
     </Bar>
   );
-};
-
-export default HeaderBar;
+}

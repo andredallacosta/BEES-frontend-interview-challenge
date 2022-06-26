@@ -19,13 +19,13 @@ const Subtitle = styled.h1`
   font-size: 25px;
 `;
 
-const NoDataWarning = () => (
-  <Container>
-    <Title>No data fetched from Open Brewery DB API!</Title>
-    <Subtitle>
-      An error was encountered while fetching data from Open Brewery DB API.
-    </Subtitle>
-  </Container>
-);
-
-export default NoDataWarning;
+export default function NoDataWarning() {
+  return (
+    <Container>
+      <Title>No data fetched from Open Brewery DB API!</Title>
+      <Subtitle>
+        An error was encountered while fetching data from Open Brewery DB API.
+      </Subtitle>
+    </Container>
+  );
+}
