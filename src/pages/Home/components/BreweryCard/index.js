@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import Card from "~/components/Card";
-import VanillaButton from "~/components/VanillaButton";
-import Tag from "~/components/Tag";
+import { Card, VanillaButton, Tag } from "~/components";
 import {
   ChartSquareBar,
   CheckCircle,
