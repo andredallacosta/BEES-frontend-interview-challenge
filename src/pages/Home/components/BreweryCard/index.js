@@ -55,29 +55,30 @@ export default function BreweryCard({ data, deleteCard }) {
             {data.phone}
           </Tag>
         )}
-        <Tag style={styles.addMoreTag}>
-          {openInput ? (
-            <>
-              <VanillaButton onClick={() => setOpenInput(false)}>
-                <CheckCircle style={styles.icon} />
-              </VanillaButton>
-              <input
-                type="text"
-                placeholder=""
-                value={addMoreText}
-                style={styles.addMoreInput}
-                onChange={(e) => {
-                  setAddMoreText(e.target.value);
-                }}
-              />
-            </>
-          ) : (
-            <VanillaButton onClick={() => setOpenInput(true)}>
+        {openInput ? (
+          <Tag style={styles.addMoreTag}>
+            <VanillaButton onClick={() => setOpenInput(false)}>
+              <CheckCircle style={styles.icon} />
+            </VanillaButton>
+            <input
+              type="text"
+              placeholder=""
+              value={addMoreText}
+              style={styles.addMoreInput}
+              onChange={(e) => {
+                setAddMoreText(e.target.value);
+              }}
+              onKeyPress={(e) => e.key === "Enter" && setOpenInput(false)}
+            />
+          </Tag>
+        ) : (
+          <VanillaButton onClick={() => setOpenInput(true)}>
+            <Tag style={styles.addMoreTag}>
               <PlusCircle style={styles.icon} />
               {addMoreText || "add more"}
-            </VanillaButton>
-          )}
-        </Tag>
+            </Tag>
+          </VanillaButton>
+        )}
       </div>
     </Card>
   );
