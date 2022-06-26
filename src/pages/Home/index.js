@@ -27,6 +27,10 @@ export default function Home() {
       .catch(() => {});
   };
 
+  const deleteCard = (id) => {
+    setBreweries(breweries.filter((brewery) => brewery.id !== id));
+  };
+
   // useEffect(() => {
   //   if (!userName) {
   //     history.push("/login");
@@ -48,7 +52,7 @@ export default function Home() {
         <div style={styles.container}>
           {breweries.map((brewery) => (
             <div style={styles.cardItem} key={brewery.id}>
-              <BreweryCard data={brewery} />
+              <BreweryCard data={brewery} deleteCard={deleteCard} />
             </div>
           ))}
         </div>

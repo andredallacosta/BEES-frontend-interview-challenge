@@ -10,11 +10,12 @@ import {
   LocationMarker,
   Phone,
   PlusCircle,
+  Trash,
 } from "~/assets/images/icons";
 
 import styles from "./styles";
 
-export default function BreweryCard({ data }) {
+export default function BreweryCard({ data, deleteCard }) {
   const [openInput, setOpenInput] = useState(false);
   const [addMoreText, setAddMoreText] = useState("");
 
@@ -25,6 +26,13 @@ export default function BreweryCard({ data }) {
 
   return (
     <Card>
+      <VanillaButton
+        onClick={() => deleteCard(data.id)}
+        style={styles.deleteCardButton}
+      >
+        <Trash />
+      </VanillaButton>
+
       <h1 style={styles.name}>{data.name}</h1>
       <h2 style={styles.street}>{data.street}</h2>
       <h3 style={styles.address}>{getAddress(data)}</h3>
@@ -77,6 +85,7 @@ export default function BreweryCard({ data }) {
 
 BreweryCard.propTypes = {
   data: PropTypes.object,
+  deleteCard: PropTypes.func.isRequired,
 };
 
 BreweryCard.defaultProps = {

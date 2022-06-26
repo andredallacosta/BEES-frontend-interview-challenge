@@ -31,6 +31,11 @@ const styles = {
   addMoreInput: {
     width: "100px",
   },
+  deleteCardButton: {
+    position: "absolute",
+    top: "5px",
+    right: "5px",
+  },
 };
 
 export default styles;
