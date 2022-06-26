@@ -6,9 +6,7 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import Login from "~/pages/Login";
-import Home from "~/pages/Home";
-
+import { Login, Home } from "~/pages";
 import "./index.css";
 
 function App() {
