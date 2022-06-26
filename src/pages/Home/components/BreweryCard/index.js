@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import Card from "~/components/Card";
 import VanillaButton from "~/components/VanillaButton";
 import Tag from "~/components/Tag";
-import Input from "~/components/Input";
 import {
   ChartSquareBar,
   CheckCircle,
@@ -57,6 +56,7 @@ export default function BreweryCard({ data }) {
               <input
                 type="text"
                 placeholder=""
+                value={addMoreText}
                 style={styles.addMoreInput}
                 onChange={(e) => {
                   setAddMoreText(e.target.value);
