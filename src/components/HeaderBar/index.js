@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import goBackIcon from "~/assets/images/Home/goBackIcon.svg";
-import styles from "./styles";
 
 const Bar = styled.div`
   padding: 15px;
@@ -12,6 +11,9 @@ const Bar = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
 `;
 
 const GoBackButton = styled.button`
@@ -27,6 +29,16 @@ const GoBackButton = styled.button`
   justify-content: flex-start;
 `;
 
+const GoBackIcon = styled.img`
+  margin-right: 8px;
+`;
+
+const UserName = styled.h1`
+  font-weight: 400;
+  font-size: 30px;
+  margin-right: 40px;
+`;
+
 const HeaderBar = () => {
   const history = useHistory();
   const userName = useSelector((state) => state.app.userName);
@@ -34,10 +46,10 @@ const HeaderBar = () => {
   return (
     <Bar>
       <GoBackButton onClick={() => history.push("login")}>
-        <img src={goBackIcon} alt="go back" style={styles.goBackIcon} />
+        <GoBackIcon src={goBackIcon} alt="go back" />
         Go Back
       </GoBackButton>
-      <h1 style={styles.userName}>{userName}</h1>
+      <UserName>{userName}</UserName>
     </Bar>
   );
 };

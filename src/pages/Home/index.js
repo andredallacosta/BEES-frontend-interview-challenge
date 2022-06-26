@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import HeaderBar from "~/components/HeaderBar";
+import Loading from "~/components/Loading";
 import openBreweryAPI from "~/services/openBreweryAPI";
 import styles from "./styles";
 
@@ -37,6 +38,13 @@ const Home = () => {
   return (
     <div style={styles.root}>
       <HeaderBar />
+      {loading ? (
+        <div style={styles.loadingDiv}>
+          <Loading />
+        </div>
+      ) : (
+        <h1>Home</h1>
+      )}
     </div>
   );
 };

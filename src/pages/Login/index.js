@@ -5,8 +5,8 @@ import { useDispatch } from "react-redux";
 import { setUserName } from "~/redux/app/appSlice";
 
 import Input from "~/components/Input";
-import Button from "~/components/Button";
 import bee from "~/assets/images/Login/bee.png";
+import Button from "./components/Button";
 import styles from "./styles";
 
 const Login = () => {
