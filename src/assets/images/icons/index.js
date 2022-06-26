@@ -4,6 +4,7 @@ import { ReactComponent as CheckCircle } from "./check-circle.svg";
 import { ReactComponent as LocationMarker } from "./location-marker.svg";
 import { ReactComponent as Phone } from "./phone.svg";
 import { ReactComponent as PlusCircle } from "./plus-circle.svg";
+import { ReactComponent as Trash } from "./trash.svg";
 
 export {
   ArrowCircleLeft,
@@ -12,4 +13,5 @@ export {
   LocationMarker,
   Phone,
   PlusCircle,
+  Trash,
 };
