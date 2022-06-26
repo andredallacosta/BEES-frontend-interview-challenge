@@ -3,10 +3,9 @@ import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import goBackIcon from "~/assets/images/Home/goBackIcon.svg";
+import { ArrowCircleLeft } from "~/assets/images/icons";
 
 const Bar = styled.div`
-  padding: 10px;
   background: #f2ec54;
   display: flex;
   align-items: center;
@@ -17,7 +16,7 @@ const Bar = styled.div`
 `;
 
 const GoBackButton = styled.button`
-  padding: 8px 16px;
+  padding: 16px;
   background: none;
   border-radius: 4px;
   font-size: 25px;
@@ -29,8 +28,10 @@ const GoBackButton = styled.button`
   justify-content: flex-start;
 `;
 
-const GoBackIcon = styled.img`
+const GoBackIcon = styled(ArrowCircleLeft)`
   margin-right: 8px;
+  width: 38px;
+  height: 38px;
 `;
 
 const UserName = styled.h1`
@@ -46,7 +47,7 @@ export default function HeaderBar() {
   return (
     <Bar>
       <GoBackButton onClick={() => history.push("login")}>
-        <GoBackIcon src={goBackIcon} alt="go back" />
+        <GoBackIcon />
         Go Back
       </GoBackButton>
       <UserName>{userName}</UserName>
