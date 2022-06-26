@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import Card from "~/components/Card";
+import VanillaButton from "~/components/VanillaButton";
 import Tag from "~/components/Tag";
+import Input from "~/components/Input";
 import {
   ChartSquareBar,
   CheckCircle,
@@ -10,9 +12,13 @@ import {
   Phone,
   PlusCircle,
 } from "~/assets/images/icons";
+
 import styles from "./styles";
 
 export default function BreweryCard({ data }) {
+  const [openInput, setOpenInput] = useState(false);
+  const [addMoreText, setAddMoreText] = useState("");
+
   const getAddress = () =>
     `${data.city ? `${data.city}, ` : ""}${
       data.state ? `${data.state} - ` : ""
@@ -42,9 +48,27 @@ export default function BreweryCard({ data }) {
             {data.phone}
           </Tag>
         )}
-        <Tag>
-          <PlusCircle style={styles.icon} />
-          add more
+        <Tag style={styles.addMoreTag}>
+          {openInput ? (
+            <>
+              <VanillaButton onClick={() => setOpenInput(false)}>
+                <CheckCircle style={styles.icon} />
+              </VanillaButton>
+              <input
+                type="text"
+                placeholder=""
+                style={styles.addMoreInput}
+                onChange={(e) => {
+                  setAddMoreText(e.target.value);
+                }}
+              />
+            </>
+          ) : (
+            <VanillaButton onClick={() => setOpenInput(true)}>
+              <PlusCircle style={styles.icon} />
+              {addMoreText || "add more"}
+            </VanillaButton>
+          )}
         </Tag>
       </div>
     </Card>

@@ -25,6 +25,12 @@ const styles = {
   icon: {
     marginRight: "5px",
   },
+  addMoreTag: {
+    cursor: "pointer",
+  },
+  addMoreInput: {
+    width: "100px",
+  },
 };
 
 export default styles;
