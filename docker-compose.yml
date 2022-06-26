@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  bees-brewery-hub:
+    container_name: 'bees-brewery-hub'
+    image: 'bees-brewery-hub'
+    build: .
+    stdin_open: true
+    tty: true
+    environment:
+      env_file: .env
+      NODE_ENV: development
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/app
