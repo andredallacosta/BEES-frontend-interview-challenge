@@ -5,6 +5,7 @@ const Card = styled.div`
   height: fit-content;
   padding: 20px;
   border: 1px solid #000;
+  position: relative;
 `;
 
 export default Card;
