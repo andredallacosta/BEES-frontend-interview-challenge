@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import goBackIcon from "~/assets/images/Home/goBackIcon.svg";
 
 const Bar = styled.div`
-  padding: 15px;
+  padding: 10px;
   background: #f2ec54;
   display: flex;
   align-items: center;
@@ -20,7 +20,7 @@ const GoBackButton = styled.button`
   padding: 8px 16px;
   background: none;
   border-radius: 4px;
-  font-size: 30px;
+  font-size: 25px;
   color: #000;
   cursor: pointer;
   border: none;

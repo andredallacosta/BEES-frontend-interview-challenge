@@ -5,6 +5,8 @@ import { useHistory } from "react-router-dom";
 import HeaderBar from "~/components/HeaderBar";
 import Loading from "~/components/Loading";
 import openBreweryAPI from "~/services/openBreweryAPI";
+import NoDataWarning from "./components/NoDataWarning";
+import BreweryCard from "./components/BreweryCard";
 import styles from "./styles";
 
 const Home = () => {
@@ -42,8 +44,16 @@ const Home = () => {
         <div style={styles.loadingDiv}>
           <Loading />
         </div>
+      ) : breweries?.length ? (
+        <div style={styles.container}>
+          {breweries.map((brewery) => (
+            <div style={styles.cardItem} key={brewery.id}>
+              <BreweryCard data={brewery} />
+            </div>
+          ))}
+        </div>
       ) : (
-        <h1>Home</h1>
+        <NoDataWarning />
       )}
     </div>
   );
